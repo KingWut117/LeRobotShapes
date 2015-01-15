@@ -5,11 +5,6 @@ import lejos.nxt.Motor;
 public class DrawingRobot
 {
 	
-	public void driveAroundRoom()
-	{
-		
-	}
-	
 	public void drawShape(int vertexCount, int length)
 	{
 		int angle = calculateAngle(vertexCount);

@@ -3,33 +3,53 @@ package robot.controller;
 import lejos.nxt.Button;
 import lejos.nxt.Motor;
 import robot.model.DrawingRobot;
+import robot.model.RoomRoamRobot;
 
 public class LeRobotController
 {
 	private DrawingRobot myBot;
 	
+	private RoomRoamRobot roomBot;
+	
 	public LeRobotController()
 	{
 		myBot = new DrawingRobot();
+		
+		roomBot = new RoomRoamRobot();
 	}
 	
 	public void start()
 	{	
 		while(Button.waitForAnyPress() != Button.ID_ESCAPE)
 		{
-			System.out.print(Motor.A.getSpeed());
-			drawSquare();
-		
-			drawTriangle();
+			//Uncomment the program you want to run
 			
-			drawHexagon();
+			//drawAllShapes();
 			
-			drawOctagon();
-		
-			drawCircle();
-		
-			myBot.driveAroundRoom();
+			//roamRoom();
 		}
+	}
+	
+	public void roamRoom()
+	{
+		while(Button.waitForAnyPress() != Button.ID_ESCAPE)
+		{
+			roomBot.driveAroundRoom();
+		}
+	}
+	
+	public void drawAllShapes()
+	{
+		System.out.print(Motor.A.getSpeed());
+		drawSquare();
+	
+		drawTriangle();
+		
+		drawHexagon();
+		
+		drawOctagon();
+	
+		drawCircle();
 	}
 	
 	public void drawSquare()
@@ -56,5 +76,6 @@ public class LeRobotController
 	{
 		myBot.drawShape(8, 2);
 	}	
+	
 	
 }
