@@ -21,6 +21,10 @@ public class LeRobotController
 			drawSquare();
 		
 			drawTriangle();
+			
+			drawHexagon();
+			
+			drawOctagon();
 		
 			drawCircle();
 		
@@ -42,4 +46,15 @@ public class LeRobotController
 	{
 		myBot.drawShape(1, 5);
 	}
+	
+	public void drawHexagon()
+	{
+		myBot.drawShape(6, 2);
+	}
+	
+	public void drawOctagon()
+	{
+		myBot.drawShape(8, 2);
+	}	
+	
 }
